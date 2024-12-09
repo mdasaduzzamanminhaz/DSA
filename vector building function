@@ -1,0 +1,200 @@
+1)push_back(): ভেক্টরের শেষে একটি নতুন এলিমেন্ট যোগ করে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v;    //এইখানে vector এর মধ্যে  কিছু নেই এখন;
+  v.push_back(10);  
+    v.push_back(20);
+    v.push_back(30);
+
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
+output: 10 20 30
+
+// আরও একটি উদাহরন দেখ
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    // vector initializeing
+    // vector<data_type>name;
+  vector<int>a(5);// 5 হচ্ছে vector এর সাইজ 
+    //push_back function
+    for(int i =0; i<5; i++){
+        cin>>a[i];
+    }
+    a.push_back(90);
+  for(int i =0; i<6; i++){ // এইখানে ৬ দেওয়ার কারন হছহে যেহেতু আমি পরবরতিতে আরও একটি ভালু অ্যাড করছি;
+     cout<<a[i]<<" ";
+    }
+
+
+ return 0; 
+} 
+
+output: user থেকে input নেওয়ার পরে শেষে ৯০ ও print হবে
+
+/*****************************************************************************************
+2)pop_back(): ভেক্টরের শেষে থাকা এলিমেন্টটি সরিয়ে ফেলে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30,50 ,200,29 ,9};
+    v.pop_back();
+    // pop_back() কল করার সাথে সাথেই শেষের element টি ডিলিট হয়ে যাবে;
+
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
+output: 10 20 30 50 200 29
+/*****************************************************************************************
+3)insert(): ভেক্টরের নির্দিষ্ট পজিশনে একটি নতুন এলিমেন্ট যোগ করে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    v.insert(v.begin() + 1, 15);
+
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
+output: 10 15 20 30 
+/*****************************************************************************************
+4)erase(): ভেক্টরের নির্দিষ্ট পজিশন থেকে এলিমেন্ট সরিয়ে ফেলে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    v.erase(v.begin() + 1);
+
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
+output: 10 30
+/*****************************************************************************************
+ 5)size(): ভেক্টরের বর্তমান সাইজ রিটার্ন করে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    cout << "Size of vector: " << v.size() << endl;
+
+    return 0;
+}
+output: Size of vector: 3
+/*****************************************************************************************
+6)clear(): ভেক্টরের সমস্ত এলিমেন্ট সরিয়ে ফেলে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    v.clear();
+
+    cout << "Size of vector after clear: " << v.size() << endl;
+
+    return 0;
+}
+/*****************************************************************************************
+7) empty(): চেক করে ভেক্টরটি খালি কিনা।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v;
+    if (v.empty()) {
+        cout << "Vector is empty" << endl;
+    } else {
+        cout << "Vector is not empty" << endl;
+    }
+
+    return 0;
+}
+output: Vector is empty
+/*****************************************************************************************
+8)back(): ভেক্টরের শেষ এলিমেন্ট রিটার্ন করে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    cout << "Last element: " << v.back() << endl;
+
+    return 0;
+}
+output:30
+/*****************************************************************************************
+9)front(): ভেক্টরের প্রথম এলিমেন্ট রিটার্ন করে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    cout << "First element: " << v.front() << endl;
+
+    return 0;
+}
+output: 10
+/*****************************************************************************************
+10) resize(): ভেক্টরের সাইজ পরিবর্তন করে।
+
+cpp
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> v = {10, 20, 30};
+    v.resize(5); // Vector will have 5 elements now, new elements are initialized to 0
+
+    for (int i = 0; i < v.size(); i++) {
+        cout << v[i] << " ";
+    }
+
+    return 0;
+}
+output: 10 20 30 0 0
